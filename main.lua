@@ -1,12 +1,20 @@
 
 function love.load()
-  number = 0
+  target = {}
+  target.x = 300
+  target.y = 300
+  target.radius = 50
+
+  score = 0
+  timer = 0
 end
 
 function love.update(dt)
-  number = number + 1
+  target.x = love.math.random()
+  target.y = love.math.random()
 end
 
 function love.draw()
-  love.graphics.rectangle("fill", 200, 400, 200, 100)
+  love.graphics.setColor(1,0,0)
+  love.graphics.circle("fill", target.x, target.y, target.radius)
 end
